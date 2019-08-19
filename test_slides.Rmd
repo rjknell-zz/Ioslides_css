@@ -91,14 +91,19 @@ narrative is valid.
 
 ## Plot.ly interactive plot 1
 
+Press h to see the code highlighting feature of ioslides
+
+```{r echo = FALSE}
+# Load data
+crays <-
+  read.csv("http://introductoryr.co.uk/Reproducibility/book/data/Crays.csv")
+```
+
 ```{r echo = TRUE, eval=FALSE}
 
 # Install packages 
 library(ggplot2) 
 library(plotly)
-
-# Load data
-crays <- read.csv("Gut analysis records v4 consolidated FoO.csv")
 
 # Draw graph
 ### <b>
@@ -110,6 +115,8 @@ p <- ggplot(crays, aes(x = Size.mm, y = Weight.g, colour = Sex)) +
 ### </b>
 
 ggplotly(p)
+
+
 ```
 
 ## Plot.ly interactive plot 2 {.flexbox .vcenter}
@@ -118,7 +125,6 @@ ggplotly(p)
 library(ggplot2)
 library(plotly)
 
-crays <- read.csv("Gut analysis records v4 consolidated FoO.csv")
 ### <b>
 p <- ggplot(crays, aes(x = Size.mm, y = Weight.g, colour = Sex)) +
   geom_point() + theme_bw() + scale_color_brewer(palette = "Dark2") +
@@ -126,6 +132,7 @@ p <- ggplot(crays, aes(x = Size.mm, y = Weight.g, colour = Sex)) +
 ### </b>
 
 ggplotly(p)
+
 ```
 
 
@@ -144,8 +151,10 @@ $$ \binom{n}{k} = \frac{n!}{k!(n-k)!} $$
 
 ## Table test
 
-```{r}
+```{r echo = FALSE}
 df1 <- data.frame(crays[1:4, 1:5])
 
 df1
+
+rm(crays)
 ```
