@@ -1,0 +1,155 @@
+---
+title: "Test slides"
+author: "Rob Knell"
+date: "15/08/2019"
+output:
+  ioslides_presentation:
+    css: slidestyles2.css
+    df_print: kable
+---
+
+## Columns test {.build}
+
+<div class="columns-2">
+### Column 1
+
+```{r echo = FALSE}
+plot(rnorm(100), type = "b", col = "steelblue")
+```
+
+### Column 2
+>- Bullet 1
+>- Bullet 2
+>- Bullet 3
+</div>
+
+<div class = "footer">
+testing testing
+</div>
+
+
+## Whiskered tree swift {.flexbox .vcenter}
+
+![Photograph of a whiskered treeswift](https://farm8.staticflickr.com/7452/16378277297_91851e89ae.jpg "Whiskered treeswift")
+
+## Slide with Bullets and code {.build}
+
+- Bullet 1
+- Bullet 2
+- Bullet 3
+- Bullet 3
+- Bullet 3
+
+
+```{r echo = TRUE, eval = FALSE}
+# Here is some code
+rnorm(100) %>% sqrt() %>% plot()
+
+X1 <- rnorm(100)
+
+X2 <- c("Green", "Blue", "Red")
+
+plot(X1)
+```
+
+# Extra title test with further text| Subtitle
+
+Some more text
+
+## Using the footer div
+
+Normal rmarkdown footnotes don't seem to render in ioslides. I've added a new class called "footer". If you wish to add a footer you can do it with:
+
+```
+<div class = "footer">
+My text
+</div>
+```
+
+If you want to refer to it in main text with superscripts then you'll have to use html e.g. 
+
+```
+if art is interchangeable with language; if that is not the case,  
+sexuality<sup>1</sup> may be used
+```
+
+
+
+## Slide with Text
+
+If one examines pretextual desublimation, one is faced with a choice: either
+reject Baudrillardist simulation or conclude that the State is capable of
+significance, but only if art is interchangeable with language; if that is not the case, sexuality<sup>1</sup> may be used to oppress the proletariat. The subject is contextualised into a pretextual paradigm of narrative that includes art as a
+reality. Therefore, the premise of Baudrillardist simulation<sup>2</sup> holds that the
+goal of the artist is deconstruction, given that the pretextual paradigm of
+narrative is valid.
+
+<div class = "footer">
+1. Knell, R.J. (2004) Syphilis in renaissance Europe: rapid evolution of an introduced sexually transmitted disease? Proceedings of the Royal Society B: Biological Sciences, 271 Suppl 4, S174–6.
+2. Here's another reference. Journal of postmodernist stuff. 
+</div>
+
+## Plot.ly interactive plot 1
+
+```{r echo = TRUE, eval=FALSE}
+
+# Install packages 
+library(ggplot2) 
+library(plotly)
+
+# Load data
+crays <- read.csv("Gut analysis records v4 consolidated FoO.csv")
+
+# Draw graph
+### <b>
+p <- ggplot(crays, aes(x = Size.mm, y = Weight.g, colour = Sex)) +
+  geom_point() + 
+  theme_bw() + 
+  scale_color_brewer(palette = "Dark2") +
+  xlab("Length (mm)") + ylab("Weight (g)")
+### </b>
+
+ggplotly(p)
+```
+
+## Plot.ly interactive plot 2 {.flexbox .vcenter}
+
+```{r message = FALSE, warning=FALSE, echo = FALSE}
+library(ggplot2)
+library(plotly)
+
+crays <- read.csv("Gut analysis records v4 consolidated FoO.csv")
+### <b>
+p <- ggplot(crays, aes(x = Size.mm, y = Weight.g, colour = Sex)) +
+  geom_point() + theme_bw() + scale_color_brewer(palette = "Dark2") +
+  xlab("Length (mm)") + ylab("Weight (g)")
+### </b>
+
+ggplotly(p)
+```
+
+## Keats test slide {.Keats}
+
+The weariness, the fever and the fret  
+Where men sit and hear each other groan
+
+## Maths test
+
+$$ x^{2} $$
+
+
+$$ \binom{n}{k} = \frac{n!}{k!(n-k)!} $$
+
+
+<div class = "notes">
+- Colour of maths is rendered as the same as normal text
+- Not sure how to adjust size, maybe from within LaTeX code?
+</div>
+
+## Table test
+
+```{r}
+df1 <- data.frame(crays[1:4, 1:5])
+
+df1
+```
