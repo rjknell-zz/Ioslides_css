@@ -128,10 +128,6 @@ p <- ggplot(crays, aes(x = Size.mm, y = Weight.g, colour = Sex)) +
 ggplotly(p)
 ```
 
-## Keats test slide {.Keats}
-
-The weariness, the fever and the fret  
-Where men sit and hear each other groan
 
 ## Maths test
 
