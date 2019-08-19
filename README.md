@@ -22,6 +22,9 @@ The slides will then be rendered using both the default CSS and slidestyles2, bu
 
 To change the formatting you will need to edit slidestyles2.css, which will hopefully be made easier by the commenting.
 
+## Test slides
+There is a set of test slides available as an .Rmd file and also as the html.
+
 ## Final note
 
 I am very much an amateur with .css files. If you see a mistake or a better way to do things please let me know.
