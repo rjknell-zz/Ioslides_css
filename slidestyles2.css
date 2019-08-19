@@ -201,3 +201,15 @@ slides > slide.dark {
   background: linear-gradient(#99a5b9, #abb5c5) !important;
 }
 
+/* Non-R code blocks */
+pre {
+    background: #FFFFFF;
+    color: #6c7e9c;
+}
+
+
+/* This keeps images in columns sized correctly */
+img { 
+  max-width:100%; 
+  height: auto; 
+}
